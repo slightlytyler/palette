@@ -6,8 +6,8 @@
       {{#each itemController="color"}}
         <li {{bind-attr style=style}} {{action "editColor" on="doubleClick"}} class="color">
           {{#if isEditing}}
-            {{input type="text" class="edit--title" value=title focus-out="acceptChanges" insert-newline="acceptChanges"}}
-            {{input type="text" class="edit--value" value=value focus-out="acceptChanges" insert-newline="acceptChanges"}}
+            {{input type="text" class="edit--title" value=title insert-newline="acceptChanges"}}
+            {{col-pick-input type="text" class="edit--value" value=value insert-newline="acceptChanges"}}
           {{else}}
             <span class="name">{{title}}</span>
             <span class="value">#{{value}}</span>
