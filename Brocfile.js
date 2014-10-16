@@ -5,7 +5,8 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var app = new EmberApp({
   stylusOptions: {
     includePaths: [
-      'bower_components/jeet/stylus'
+      'bower_components/jeet/stylus',
+      'bower_components/normalize.styl'
     ]
   }
 });

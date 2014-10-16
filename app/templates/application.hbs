@@ -1,21 +1,35 @@
-<div class="sidebare frame">
+<div class="sidebar">
   <ul>
   </ul>
 </div>
 
-<div class="main frame">
+<div class="main">
 
-  <section class="tabs frame">
+  <section class="tabs">
     <ul>
-      <li>Palette</li>
-      <li>URL</li>
-      <li>Library</li>
+      <li>
+        <span>Palette</span>
+      </li>
+      <li class="active">
+        <span>URL</span>
+      </li>
+      <li>
+        <span>Library</span>
+      </li>
+      <li class="seperator">
+        <span>Login</span>
+      </li>
     </ul>
   </section>
 
   <section class="editor">
-    <h2 id='title'>Title</h2>
+    <h2>Title</h2>
 
+    <ul class="palette">
+      <li>Color 1</li>
+      <li>Color 2</li>
+      <li>Color 3</li>
+    </ul>
     {{outlet}}
 
   </section>
