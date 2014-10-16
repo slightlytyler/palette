@@ -4,10 +4,10 @@
   <div>
     <ul class="palette">
       {{#each itemController="color"}}
-        <li {{bind-attr style=style}}>
+        <li {{bind-attr style=style}} class="color">
           <span class="name">{{title}}</span>
-          <span class="color">{{color}}</span>
-          <button {{action "removeColor"}} class="delete">X</button>
+          <span class="value">#{{color}}</span>
+          <button {{action "removeColor"}} class="remove">X</button>
         </li>
       {{/each}}
     </ul>
