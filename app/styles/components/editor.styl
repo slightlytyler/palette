@@ -2,4 +2,34 @@
   text-align: center
 
   h2
+    position: relative
+    display: inline-block
     color: $clr-blue-grey-800
+    font-size: 5rem
+
+    @extend $text-inner-shadow
+
+  div
+    position: relative
+    @extend $inner-container
+
+  .add-color
+    position: absolute
+    height: 3rem
+    width: 3rem;
+    right: 0
+    top: 50%
+    transform: translate(150%, -50%)
+
+    background-color: $clr-blue-grey-600
+    border: none
+
+    span
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -55%);
+
+      font-size: 3rem
+      color: white
