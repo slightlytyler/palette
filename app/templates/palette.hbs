@@ -3,10 +3,11 @@
 
   <div>
     <ul class="palette">
-      {{#each}}
-        <li style="background-color: rgba(255,255,255,.5);">
-          <span class="name">Color 1</span>
-          <span class="color">rgba(255,255,255,.5)</span>
+      {{#each itemController="color"}}
+        <li {{bind-attr style=style}}>
+          <span class="name">{{title}}</span>
+          <span class="color">{{color}}</span>
+          <button {{action "removeColor"}} class="delete">X</button>
         </li>
       {{/each}}
     </ul>
