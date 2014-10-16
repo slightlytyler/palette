@@ -1,0 +1,10 @@
+$max-width = 80rem
+
+$outer-container
+  display: block
+  max-width: $max-width
+  margin: 0 auto
+
+$inner-container
+  @extend $outer-container
+  max-width $max-width * (2/3)
