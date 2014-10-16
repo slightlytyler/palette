@@ -4,11 +4,11 @@ export default Ember.ArrayController.extend({
   actions: {
     createColor: function() {
       var colorTitle = "New Title";
-      var colorValue = "ff0000";
+      var colorValue = "ffffff";
 
       var color = this.store.createRecord('color', {
         title: colorTitle,
-        color: colorValue
+        value: colorValue
       });
 
       color.save();

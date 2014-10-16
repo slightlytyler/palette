@@ -4,9 +4,15 @@
   <div>
     <ul class="palette">
       {{#each itemController="color"}}
-        <li {{bind-attr style=style}} class="color">
-          <span class="name">{{title}}</span>
-          <span class="value">#{{color}}</span>
+        <li {{bind-attr style=style}} {{action "editColor" on="doubleClick"}} class="color">
+          {{#if isEditing}}
+            {{input type="text" class="edit--title" value=title focus-out="acceptChanges" insert-newline="acceptChanges"}}
+            {{input type="text" class="edit--value" value=value focus-out="acceptChanges" insert-newline="acceptChanges"}}
+          {{else}}
+            <span class="name">{{title}}</span>
+            <span class="value">#{{value}}</span>
+          {{/if}}
+  
           <button {{action "removeColor"}} class="remove">X</button>
         </li>
       {{/each}}
