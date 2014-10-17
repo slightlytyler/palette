@@ -1,9 +1,9 @@
 <section class="editor">
-  <h2 title="Title">Title</h2>
-
+  <h2 {{bind-attr title=title}}>{{title}}</h2>
+  <button {{action "createColor"}} class="add-color"><span>+</span></button>
   <div>
     <ul class="palette">
-      {{#each itemController="color"}}
+      {{#each color in model.colors}}
         <li {{bind-attr style=style}} {{action "editColor" on="doubleClick"}} class="color">
           {{#if isEditing}}
             {{input type="text" class="edit--title" value=title insert-newline="acceptChanges"}}
@@ -18,7 +18,7 @@
       {{/each}}
     </ul>
 
-    <button {{action "createColor"}} class="add-color"><span>+</span></button>
+    
   </div>
 
 </section>

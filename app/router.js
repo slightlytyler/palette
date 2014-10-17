@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('palette', {path: '/'});
+  this.resource('palette', {path: 'palette/:palette_id'});
 });
 
 export default Router;
