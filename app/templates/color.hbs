@@ -1,0 +1,11 @@
+<li {{bind-attr style=style}} {{action "editColor" on="doubleClick"}} class="color">
+  {{#if isEditing}}
+    {{input type="text" class="edit--title" value=title insert-newline="acceptChanges"}}
+    {{col-pick-input type="text" class="edit--value" value=value insert-newline="acceptChanges"}}
+  {{else}}
+    <span class="name">{{title}}</span>
+    <span class="value">#{{value}}</span>
+  {{/if}}
+
+  <button {{action "removeColor"}} class="remove">X</button>
+</li>

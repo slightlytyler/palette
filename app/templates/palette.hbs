@@ -1,24 +1,15 @@
 <section class="editor">
   <h2 {{bind-attr title=title}}>{{title}}</h2>
-  <button {{action "createColor"}} class="add-color"><span>+</span></button>
+
   <div>
     <ul class="palette">
       {{#each color in model.colors}}
-        <li {{bind-attr style=style}} {{action "editColor" on="doubleClick"}} class="color">
-          {{#if isEditing}}
-            {{input type="text" class="edit--title" value=title insert-newline="acceptChanges"}}
-            {{col-pick-input type="text" class="edit--value" value=value insert-newline="acceptChanges"}}
-          {{else}}
-            <span class="name">{{title}}</span>
-            <span class="value">#{{value}}</span>
-          {{/if}}
-  
-          <button {{action "removeColor"}} class="remove">X</button>
-        </li>
+        {{render 'color' color}}
       {{/each}}
+      <li class="color new">
+        <button {{action "createColor"}} class="add-color"><span>+</span></button>
+      </li>
     </ul>
-
-    
   </div>
 
 </section>

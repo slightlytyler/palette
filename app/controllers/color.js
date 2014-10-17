@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  needs: "palette",
+  palette: Ember.computed.alias("controllers.palette"),
   actions: {
     editColor: function() {
       // Add isEditing property
@@ -9,10 +11,14 @@ export default Ember.ObjectController.extend({
     removeColor: function() {
       // Get model onject
       var color = this.get('model');
+      var parent = this.get('palette').get('model');
 
-      // Delete and save
-      color.deleteRecord();
-      color.save();
+      parent.get('colors').removeObject('color').then(function() {
+        color.destroyRecord();
+        parent.save();
+      });
+
+      
     },
     acceptChanges: function() {
       // Remove isEditing property
