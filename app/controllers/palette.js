@@ -17,6 +17,24 @@ export default Ember.ObjectController.extend({
         parent.get('colors').addObject(color);
         parent.save();
       });
+    },
+    editPalette: function() {
+      this.set('isEditing', true);
+    },
+    acceptChanges: function() {
+      var model = this.get('model');
+      var newTitle = model.get('title');
+
+      // Remove isEditing property
+       this.set('isEditing', false);
+
+      // If title is empty, reset back
+      // otherwise save it with new attributes
+      if(Ember.isEmpty(newTitle)) {
+        model.rollback();
+      } else {
+        model.save();
+      }
     }
   }
 });

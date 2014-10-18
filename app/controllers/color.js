@@ -1,10 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-  needs: "palette",
-  palette: Ember.computed.alias("controllers.palette"),
+  needs: 'palette',
+  palette: Ember.computed.alias('controllers.palette'),
   actions: {
     editColor: function() {
+      var parent = this.get('palette').get('model');
+
+      // Remove isEditing from siblings
+      parent.get('colors').forEach(function(color) {
+        color.set('isEditing', false);
+      });
+
       // Add isEditing property
       this.set('isEditing', true);
     },

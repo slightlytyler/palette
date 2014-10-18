@@ -1,5 +1,9 @@
 <section class="editor">
-  <h2 {{bind-attr title=title}}>{{title}}</h2>
+  {{#if isEditing}}
+    {{textfield-refocus class="edit--title" value=title insert-newline="acceptChanges" focus-out="acceptChanges"}}
+  {{else}}
+    <h2 {{bind-attr title=title}} {{action "editPalette" on="doubleClick"}}>{{title}}</h2>
+  {{/if}}
 
   <div>
     <ul class="palette">
